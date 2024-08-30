@@ -1,4 +1,4 @@
-# Incredible-India
+# Incredible India: Tourism Guide
 A full-stack web application to provide users with detailed information about various cities, including descriptions, best places to visit, local cuisines, and user ratings.
 Utilized Django to manage back-end development, including models, views, and templates, ensuring a robust and scalable application structure.
 Designed and implemented models to store and manage city data, including related descriptions, using Django's ORM.
