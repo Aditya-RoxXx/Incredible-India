@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ city.city_name }} - All Descriptions</title>
+</head>
+<body>
+    <h1>Descriptions for {{ city.city_name }}</h1>
+
+    {% if descriptions %}
+        <ul>
+            {% for description in descriptions %}
+                <li>
+                    <strong>Description:</strong> {{ description.city_description }}<br>
+                    <strong>Best Food:</strong> {{ description.best_food }}<br>
+                    <strong>Best Place to Visit:</strong> {{ description.best_place_to_visit }}<br>
+                    <strong>Rating:</strong> {{ description.rating }} / 5<br>
+                    <hr>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No descriptions have been submitted for this city yet.</p>
+    {% endif %}
+
+    <a href="{% url 'tourist:detail' city.id %}">Back to City Details</a>
+</body>
+</html>

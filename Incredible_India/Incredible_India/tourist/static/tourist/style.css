@@ -1,0 +1,100 @@
+.main-page {
+    background: url("images/incredible_india.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100vh;
+    padding-bottom: 20px;
+}
+
+ul {
+    float: left;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.box {
+    padding: 30px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    background-color: burlywood;
+}
+
+.box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.box li {
+    font-size: 24px;
+    border: 1px solid;
+    padding: 20px;
+    border-radius: 8px;
+    color: black;
+    text-align: center;
+}
+
+.box a {
+    text-decoration: none;
+    color: black;
+}
+
+.box a:hover {
+    color: #007bff;
+}
+
+.detail-container {
+    background: url("images/6530.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.detail-container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.detail-container h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.city-description {
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+a {
+    display: block;
+    margin: 10px 0;
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

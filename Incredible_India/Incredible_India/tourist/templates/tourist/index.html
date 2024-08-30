@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incredible India</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'tourist/style.css' %}">
+</head>
+<body>
+<div class="main-page">    
+{% if latest_city_list %}
+    <div class="container">
+    <div class="box">
+    <ul>
+        {% for city in latest_city_list %}
+            <li><a href="{% url 'tourist:detail' city.id %}">{{ city.city_name }}</a></li>
+        {% endfor %}
+    </ul>
+    </div>
+    </div>
+{% else %}
+    <p>No City are available.</p>
+{% endif %}
+</div>
+</body>
+</html>

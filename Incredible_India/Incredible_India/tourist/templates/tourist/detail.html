@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>City Details</title>
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'tourist/style.css' %}">
+    </head>
+    <body>
+        <div class="detail-container">
+        <h1>{{city.city_name}}</h1>
+        <h2>{{city.city_state}}</h2>
+
+        <div class="city-description">
+        <h3>City Description:</h3>
+        <a href="{% url 'tourist:city_descriptions' city.id %}">View all Descriptions</a><br>
+        <a href="{% url 'tourist:index' %}">Back to main page</a>
+        <p>{{ city_description.city_description }}</p>
+        <p>Best food to eat: {{city_description.best_food}}</p>
+        <p>Best place to visit: {{city_description.best_place_to_visit}}</p>
+        <p>Rating: {{ city_description.rating }}/5</p>
+        </div>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+
+        {% if form.errors %}
+        <div style="color: red;">
+            <h2>Please correct the following errors: </h2>
+            <ul>
+                {% for field in form %}
+                {% for error in field.errors %}
+                <li>{{field.label}}: {{error}}</li>
+                {% endfor %}
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+    </div>
+    </body>
+</html>

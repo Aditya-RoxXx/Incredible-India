@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Results for {{city.city_name}}</title>
+    </head>
+    <body>
+        <h1>Results for {{city.city_name}}</h1>
+        <ul>
+            {% for description in city_descriptions %}
+            <li>
+                {{description.city_description}} - Best Food: {{ description.best_food}}, Best Place: {{description.best_place_to_visit}}
+                <p>Rating: {{description.rating}}/5</p>
+            </li>
+            {% empty %}
+            <li>No descriptions available.</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
